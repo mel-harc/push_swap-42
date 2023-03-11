@@ -6,7 +6,7 @@
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 18:55:29 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/11 23:57:57 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/12 00:38:24 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_first_sort(t_info *info, t_stack *stack, int m)
 void	ft_final_sort(t_stack *stack, t_info *info)
 {
 	t_list	*max;
-	
+
 	while (stack->top_b)
 	{
 		max = ft_lstmax(stack);

@@ -6,7 +6,7 @@
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 18:20:29 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/11 23:58:05 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/12 00:39:10 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_rank(t_info *info)
 	while (head)
 	{
 		tab[i] = head;
- 		head = head->next;
+		head = head->next;
 		i++;
 	}
 	tab[i] = head;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swap_b.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-harc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 18:00:19 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/11 18:14:56 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/11 20:54:58 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,3 +60,4 @@ void	ft_rrb(t_stack *stack)
 	stack->top_b->prev_lst = NULL;
 	ft_update_index_b(stack);
 	write(1, "rrb\n", 4);
+}

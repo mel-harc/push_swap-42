@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_dup.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-harc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 16:25:00 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/11 17:53:48 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/11 23:01:58 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_check_dup(char **av)
 	}
 	if (ft_check_ordre(numbers, size) == 1)
 		ft_error(2);
-	ft_fill_stack(numbers, size, tmp, str);
+	ft_fill_stack(numbers, size);
 	ft_free(str_2d, numbers);
 	return (0);
 }
@@ -40,19 +40,18 @@ int	ft_check_dup(char **av)
 char	*ft_fill(char **av)
 {
 	int		i;
-	int		*tmp;
+	char	*tmp;
 	char	*str;
 
-	i = 0;
+	i = 1;
 	str = NULL;
+	tmp = NULL;
 	while (av[i])
 	{
 		tmp = str;
 		str = ft_strjoin(str, av[i]);
-		if (tmp != NULL)
-			free(tmp);
+		i++;
 	}
-	free(tmp);
 	return (str);
 }
 
@@ -63,7 +62,7 @@ void	ft_free(char **str, int *nbr)
 	i = 0;
 	while (str[i])
 	{
-		free(ste[i]);
+		free(str[i]);
 		i++;
 	}
 	free(str);

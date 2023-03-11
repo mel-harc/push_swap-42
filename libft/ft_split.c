@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-harc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 20:11:13 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/11 20:11:16 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/11 21:32:38 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,6 @@ static	size_t	ft_nwords(const char *s, char c)
 	return (i);
 }
 
-static	char	**ft_free(char **str, int d)
-{
-	while (d >= 0)
-	{
-		free(str[d--]);
-	}
-	free(str);
-	return (0);
-}
-
 char	**ft_split(const char *s, char c)
 {
 	char	**str;
@@ -62,8 +52,6 @@ char	**ft_split(const char *s, char c)
 			len++;
 		if (len != 0)
 			str[i++] = ft_substr(s, 0, len);
-		if (!str[i - 1])
-			return (ft_free(str, i - 1));
 		s += len;
 	}
 	str[i] = NULL;

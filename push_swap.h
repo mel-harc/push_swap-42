@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-harc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 15:40:10 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/11 17:51:59 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/11 22:42:17 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ typedef struct s_list
 	int				value;
 	int				index;
 	int				rank;
-	struct t_list	*next;
-	struct t_list	*prev_lst;
+	struct s_list	*next;
+	struct s_list	*prev_lst;
 }	t_list;
 
 typedef struct s_info
@@ -58,27 +58,33 @@ size_t	ft_count(char **str);
 int		ft_check_dup1(int *nbr, int i);
 int		ft_check_ordre(int *nbr, int size);
 void	ft_fill_stack(int *nbr, int size);
-s_list	*ft_lstnew(int content, int i);
-void	ft_add(s_info *info, s_list *new);
-void	ft_algo_of_3nbr(s_info *info);
-void	ft_sa(s_info *lst);
-void	ft_ra(s_info *info);
-void	ft_rra(s_info *info);
-s_list	*ft_lstmin(s_info *lst);
-s_list	*ft_lstmax(s_stack *head);
-void	ft_algo_of_5nbr(s_info *info);
-void	ft_algo_of_4nbr(s_info *info);
-void	ft_pb(s_info *node, s_stack *stack_b);
-void	ft_f(s_info *info, s_stack *stack, s_list *min);
-void	ft_update_index(s_info *info);
-void	ft_update_index_b(s_stack *stack);
-void	ft_pa(s_info *info, s_stack *stack);
-void	ft_sb(s_stack *stack);
-void	ft_rb(s_stack *stack);
-void	ft_rrb(s_stack *stack);
-void	ft_rank(s_info *info);
-void	ft_algo_sort(s_info *info);
-void	ft_free(char **str, int *nbr);
+t_list	*ft_lstnew(int content, int i);
+void	ft_add(t_info *info, t_list *new);
+void	ft_algo_of_3nbr(t_info *info);
+void	ft_sa(t_info *lst);
+void	ft_ra(t_info *info);
+void	ft_rra(t_info *info);
+t_list	*ft_lstmin(t_info *lst);
+t_list	*ft_lstmax(t_stack *head);
+void	ft_algo_of_5nbr(t_info *info);
+void	ft_algo_of_4nbr(t_info *info);
+void	ft_pb(t_info *node, t_stack *stack_b);
+void	ft_f(t_info *info, t_stack *stack, t_list *min);
+void	ft_update_index(t_info *info);
+void	ft_update_index_b(t_stack *stack);
+void	ft_pa(t_info *info, t_stack *stack);
+void	ft_sb(t_stack *stack);
+void	ft_rb(t_stack *stack);
+void	ft_rrb(t_stack *stack);
+void	ft_rank(t_info *info);
+void	ft_algo_sort(t_info *info);
 char	*ft_fill(char **av);
+void	ft_first_sort(t_info *info, t_stack *stack, int m);
+void	ft_final_sort(t_stack *stack, t_info *info);
+void	ft_swap_addr(t_list **tab);
+void	ft_free_rank(t_list **tab);
+void	ft_else(t_list *head, t_info *info, t_stack *stack_b);
+void	ft_swap_addr(t_list **tab);
+void	ft_free(char **str, int *nbr);
 
 #endif

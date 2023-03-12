@@ -6,7 +6,7 @@
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 18:20:29 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/12 00:39:10 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/12 12:05:39 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,18 +52,5 @@ void	ft_rank(t_info *info)
 	i = -1;
 	while (tab[++i])
 		tab[i]->rank = i;
-	// ft_free_rank(tab);
-}
-
-void	ft_free_rank(t_list **tab)
-{
-	int	i;
-
-	i = 0;
-	while (tab[i])
-	{
-		free(tab[i]);
-		i++;
-	}
 	free(tab);
 }

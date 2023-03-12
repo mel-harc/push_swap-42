@@ -6,7 +6,7 @@
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 16:01:37 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/12 10:12:56 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/12 12:09:45 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ int	main(int ac, char **av)
 		if (ft_check_dup(av) == 1)
 			ft_error(1);
 	}
-	system("leaks push_swap");
 	return (0);
 }

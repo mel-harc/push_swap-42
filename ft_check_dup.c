@@ -6,7 +6,7 @@
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 16:25:00 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/12 10:20:42 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/12 11:50:04 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@ int	ft_check_dup(char **av)
 {
 	char	**str_2d;
 	int		*numbers;
+	char	*str_j;
 	size_t	size;
 	int		i;
 
 	i = 0;
-	str_2d = ft_split(ft_fill(av), ' ');
+	str_j = ft_fill(av);
+	str_2d = ft_split(str_j, ' ');
 	size = ft_count(str_2d);
 	numbers = malloc(sizeof(int) * size);
 	while (str_2d[i])
@@ -33,7 +35,7 @@ int	ft_check_dup(char **av)
 	if (ft_check_ordre(numbers, size) == 1)
 		ft_error(2);
 	ft_fill_stack(numbers, size);
-	ft_free(str_2d, numbers);
+	ft_free(str_2d, numbers, str_j);
 	return (0);
 }
 
@@ -55,7 +57,7 @@ char	*ft_fill(char **av)
 	return (str);
 }
 
-void	ft_free(char **str, int *nbr)
+void	ft_free(char **str, int *nbr, char *str_j)
 {
 	int	i;
 
@@ -67,6 +69,7 @@ void	ft_free(char **str, int *nbr)
 	}
 	free(str);
 	free(nbr);
+	free(str_j);
 	return ;
 }
 

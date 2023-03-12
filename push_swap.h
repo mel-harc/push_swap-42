@@ -6,7 +6,7 @@
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 15:40:10 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/11 22:42:17 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/12 11:15:55 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ void	ft_swap_addr(t_list **tab);
 void	ft_free_rank(t_list **tab);
 void	ft_else(t_list *head, t_info *info, t_stack *stack_b);
 void	ft_swap_addr(t_list **tab);
-void	ft_free(char **str, int *nbr);
+void	ft_free(char **str, int *nbr, char *str_j);
+void	ft_free_stack(t_info *info);
+void	ft_inial(t_info *info, int size);
 
 #endif

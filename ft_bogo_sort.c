@@ -6,7 +6,7 @@
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 18:55:29 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/12 00:38:24 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/12 00:51:30 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void	ft_algo_sort(t_info *info)
 	t_stack	stack;
 	int		m;
 
-	m = 0;
+	m = 8;
 	ft_rank(info);
-	if (info->size_lst >= 5 && info->size_lst <= 200)
+	if (info->size_lst >= 5 && info->size_lst <= 300)
 		m = 8;
-	else if (info->size_lst >= 100 && info->size_lst <= 500)
+	else if (info->size_lst >= 200)
 		m = 16;
 	ft_first_sort(info, &stack, m);
 	ft_final_sort(&stack, info);

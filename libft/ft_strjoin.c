@@ -6,7 +6,7 @@
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 20:13:24 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/11 21:33:43 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/12 10:17:00 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		str[i++] = s2[j++];
 	str[i++] = ' ';
 	str[i] = '\0';
+	free((char *)s1);
 	return (str);
 }

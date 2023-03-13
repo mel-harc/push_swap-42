@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_update_index.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/11 20:14:24 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/13 22:58:54 by mel-harc         ###   ########.fr       */
+/*   Created: 2023/03/13 21:27:57 by mel-harc          #+#    #+#             */
+/*   Updated: 2023/03/13 21:35:57 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "checker.h"
 
-size_t	ft_strlen(const char *s)
+void	update_index(t_iinfo *info)
 {
-	size_t	i;
+	t_llist	*head_sa;
+	int		i;
 
+	head_sa = info->top;
 	i = 0;
-	if (!s)
-		return (0);
-	while (s[i] != '\0')
+	while (head_sa)
 	{
-		i++;
+		head_sa->index = i++;
+		head_sa = head_sa->next;
 	}
-	return (i);
+}
+
+void	update_index_b(t_sstack *stack)
+{
+	t_llist	*head_sb;
+	int		i;
+
+	head_sb = stack->top_b;
+	i = 0;
+	while (head_sb)
+	{
+		head_sb->index = i++;
+		head_sb = head_sb->next;
+	}
 }

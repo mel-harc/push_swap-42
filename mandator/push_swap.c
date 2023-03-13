@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/11 20:14:24 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/13 22:58:54 by mel-harc         ###   ########.fr       */
+/*   Created: 2023/03/11 16:01:37 by mel-harc          #+#    #+#             */
+/*   Updated: 2023/03/12 20:45:32 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-size_t	ft_strlen(const char *s)
+int	main(int ac, char **av)
 {
-	size_t	i;
+	int	i;
 
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i] != '\0')
+	i = 1;
+	if (ac >= 2)
 	{
-		i++;
+		while (av[i])
+			if (ft_check_sign(av[i++]) == 1)
+				ft_error(1);
+		if (ft_check_dup(av) == 1)
+			ft_error(1);
 	}
-	return (i);
+	return (0);
 }

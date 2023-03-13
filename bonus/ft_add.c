@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_add.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/11 16:01:37 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/12 12:09:45 by mel-harc         ###   ########.fr       */
+/*   Created: 2023/03/13 21:23:26 by mel-harc          #+#    #+#             */
+/*   Updated: 2023/03/13 21:23:52 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-int	main(int ac, char **av)
+void	ft_add(t_iinfo *info, t_llist *new)
 {
-	int	i;
+	t_llist	*last;
 
-	i = 1;
-	if (ac >= 2)
+	last = info->bottom;
+	if (info->top == NULL)
 	{
-		while (av[i])
-			if (ft_check_sign(av[i++]) == 1)
-				ft_error(1);
-		if (ft_check_dup(av) == 1)
-			ft_error(1);
+		info->top = new;
+		new->prev_lst = NULL;
+		info->bottom = new;
 	}
-	return (0);
+	else
+	{
+		info -> prev_bottom = last;
+		new->prev_lst = last;
+		last->next = new;
+		info->bottom = new;
+	}
 }

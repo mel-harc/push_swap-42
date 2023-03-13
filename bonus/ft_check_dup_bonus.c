@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_dup.c                                     :+:      :+:    :+:   */
+/*   ft_check_dup_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/11 16:25:00 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/12 11:50:04 by mel-harc         ###   ########.fr       */
+/*   Created: 2023/03/13 16:19:44 by mel-harc          #+#    #+#             */
+/*   Updated: 2023/03/13 20:38:48 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-int	ft_check_dup(char **av)
+int	check_dup_b(char **av)
 {
 	char	**str_2d;
 	int		*numbers;
@@ -21,25 +21,27 @@ int	ft_check_dup(char **av)
 	int		i;
 
 	i = 0;
-	str_j = ft_fill(av);
+	str_j = fill_b(av);
 	str_2d = ft_split(str_j, ' ');
-	size = ft_count(str_2d);
+	if (!str_2d)
+		error_b(1);
+	size = count_b(str_2d);
 	numbers = malloc(sizeof(int) * size);
 	while (str_2d[i])
 	{
 		numbers[i] = ft_atoi(str_2d[i]);
-		if (ft_check_dup1(numbers, i) == 1)
+		if (check_dup1_b(numbers, i) == 1)
 			return (1);
 		i++;
 	}
-	if (ft_check_ordre(numbers, size) == 1)
-		ft_error(2);
-	ft_fill_stack(numbers, size);
-	ft_free(str_2d, numbers, str_j);
+	if (check_ordre_b(numbers, size) == 1)
+		error_b(2);
+	fill_stack(numbers, size);
+	free_b(str_2d, numbers, str_j);
 	return (0);
 }
 
-char	*ft_fill(char **av)
+char	*fill_b(char **av)
 {
 	int		i;
 	char	*tmp;
@@ -57,7 +59,7 @@ char	*ft_fill(char **av)
 	return (str);
 }
 
-void	ft_free(char **str, int *nbr, char *str_j)
+void	free_b(char **str, int *nbr, char *str_j)
 {
 	int	i;
 
@@ -73,7 +75,7 @@ void	ft_free(char **str, int *nbr, char *str_j)
 	return ;
 }
 
-int	ft_check_ordre(int *nbr, int size)
+int	check_ordre_b(int *nbr, int size)
 {
 	int	i;
 
@@ -88,7 +90,7 @@ int	ft_check_ordre(int *nbr, int size)
 	return (1);
 }
 
-void	ft_error(int n)
+void	error_b(int n)
 {
 	if (n == 1)
 	{

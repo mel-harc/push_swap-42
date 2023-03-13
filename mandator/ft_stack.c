@@ -6,11 +6,11 @@
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 17:56:49 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/12 12:03:44 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/12 20:45:16 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_fill_stack(int *nbr, int size)
 {

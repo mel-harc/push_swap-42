@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap_b.c                                        :+:      :+:    :+:   */
+/*   instraction_stack_b.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/11 18:00:19 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/11 20:54:58 by mel-harc         ###   ########.fr       */
+/*   Created: 2023/03/13 21:02:04 by mel-harc          #+#    #+#             */
+/*   Updated: 2023/03/13 21:32:42 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	ft_sb(t_stack *stack)
+void	sb(t_sstack *stack)
 {
 	int	tmp;
 
@@ -22,10 +22,10 @@ void	ft_sb(t_stack *stack)
 	write(1, "sb\n", 3);
 }
 
-void	ft_rb(t_stack *stack)
+void	rb(t_sstack *stack)
 {
-	t_list	*head;
-	t_list	*tail;
+	t_llist	*head;
+	t_llist	*tail;
 
 	head = stack->top_b;
 	tail = stack->bottom_b;
@@ -38,14 +38,14 @@ void	ft_rb(t_stack *stack)
 	stack->top_b = head->next;
 	stack->top_b->prev_lst = NULL;
 	head->next = NULL;
-	ft_update_index_b(stack);
+	update_index_b(stack);
 	write(1, "rb\n", 3);
 }
 
-void	ft_rrb(t_stack *stack)
+void	rrb(t_sstack *stack)
 {
-	t_list	*head;
-	t_list	*tail;
+	t_llist	*head;
+	t_llist	*tail;
 
 	head = stack->top_b;
 	tail = stack->bottom_b;
@@ -58,6 +58,6 @@ void	ft_rrb(t_stack *stack)
 	stack->prev_bottom_b = stack->bottom_b->prev_lst;
 	stack->bottom_b->next = NULL;
 	stack->top_b->prev_lst = NULL;
-	ft_update_index_b(stack);
+	update_index_b(stack);
 	write(1, "rrb\n", 4);
 }

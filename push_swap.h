@@ -6,7 +6,7 @@
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 15:40:10 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/12 11:15:55 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/13 18:05:10 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,6 @@ void	ft_swap_addr(t_list **tab);
 void	ft_free(char **str, int *nbr, char *str_j);
 void	ft_free_stack(t_info *info);
 void	ft_inial(t_info *info, int size);
+void	ft_error_a(int n);
 
 #endif

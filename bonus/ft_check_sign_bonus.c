@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check.c                                         :+:      :+:    :+:   */
+/*   ft_check_sign_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/11 16:09:07 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/12 10:24:39 by mel-harc         ###   ########.fr       */
+/*   Created: 2023/03/12 21:20:36 by mel-harc          #+#    #+#             */
+/*   Updated: 2023/03/13 19:00:17 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-size_t	ft_count(char **str)
+size_t	count_b(char **str)
 {
 	size_t	i;
 
@@ -22,7 +22,7 @@ size_t	ft_count(char **str)
 	return (i);
 }
 
-int	ft_check_dup1(int *nbr, int i)
+int	check_dup1_b(int *nbr, int i)
 {
 	int	k;
 	int	j;
@@ -39,33 +39,33 @@ int	ft_check_dup1(int *nbr, int i)
 	return (0);
 }
 
-int	ft_check_sign(char *av)
+int	check_sign_b(char *av)
 {
 	char	**str;
 	int		i;
 
 	i = 0;
 	if (av[0] == '\0')
-		ft_error(1);
+		error_b(1);
 	else if (ft_strchr(av, ' ') != NULL)
 	{
 		str = ft_split(av, ' ');
 		if (!str || !*str)
-			ft_error(1);
+			error_b(1);
 		while (str[i])
-			if (ft_check_alpha(str[i++]) == 1)
+			if (check_alpha_b(str[i++]) == 1)
 				return (1);
 		i = 0;
 		while (str[i])
 			free(str[i++]);
 		free(str);
 	}
-	else if (ft_check_alpha(av) == 1)
+	else if (check_alpha_b(av) == 1)
 		return (1);
 	return (0);
 }
 
-int	ft_check_alpha(char *str)
+int	check_alpha_b(char *str)
 {
 	int	i;
 

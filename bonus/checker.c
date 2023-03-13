@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/11 20:14:24 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/13 22:58:54 by mel-harc         ###   ########.fr       */
+/*   Created: 2023/03/12 21:14:50 by mel-harc          #+#    #+#             */
+/*   Updated: 2023/03/13 22:47:31 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "checker.h"
 
-size_t	ft_strlen(const char *s)
+int main(int ac, char **av)
 {
-	size_t	i;
+	int		i;
+	char	*str;
 
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i] != '\0')
+	i = 1;
+	if (ac >= 2)
 	{
-		i++;
+		while (av[i])
+			if (check_sign_b(av[i++]) == 1)
+				error_b(1);
+		if (check_dup_b(av) == 1)
+			error_b(1);
+		while (1)
+		{
+			str = get_next_line(0);
+			if (ft_atoi(str) == 0x05)
+				break ;
+			ft_make(str);
+		}
 	}
-	return (i);
+	return (0);
 }

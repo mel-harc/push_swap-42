@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mel-harc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 19:13:18 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/11 19:13:24 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/13 18:56:57 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,19 @@ int	ft_atoi(const char *str)
 	{
 		rest = rest * 10 + str[i] - 48;
 		if (rest > 2147483648 && sign == -1)
-			ft_error(1);
+			ft_error_a(1);
 		else if (rest > 2147483647 && sign == 1)
-			ft_error(1);
+			ft_error_a(1);
 		i++;
 	}
 	return (rest * sign);
+}
+
+void	ft_error_a(int n)
+{
+	if (n == 1)
+	{
+		write(1, "Error\n", 6);
+		exit(1);
+	}
 }

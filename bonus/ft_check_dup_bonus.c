@@ -6,7 +6,7 @@
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 16:19:44 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/13 20:38:48 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/16 00:37:59 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int	check_dup_b(char **av)
 			return (1);
 		i++;
 	}
-	if (check_ordre_b(numbers, size) == 1)
-		error_b(2);
+	// if (check_ordre_b(numbers, size) == 1)
+	// 	error_b(2);
 	fill_stack(numbers, size);
 	free_b(str_2d, numbers, str_j);
 	return (0);

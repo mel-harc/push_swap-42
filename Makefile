@@ -6,7 +6,7 @@
 #    By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/11 15:38:08 by mel-harc          #+#    #+#              #
-#    Updated: 2023/03/13 23:12:06 by mel-harc         ###   ########.fr        #
+#    Updated: 2023/03/15 22:14:02 by mel-harc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,8 @@ SRC_B = bonus/checker.c bonus/ft_check_dup_bonus.c bonus/ft_check_sign_bonus.c b
 		bonus/push_ab.c bonus/instraction_stack_a.c bonus/instraction_stack_b.c \
 		libft/ft_split.c libft/ft_strchr.c libft/ft_strlen.c libft/ft_atoi.c \
 		libft/ft_isdigit.c libft/ft_strjoin.c libft/ft_strdup.c libft/ft_substr.c \
-		bonus/ft_newlst.c bonus/ft_add.c  bonus/ft_update_index.c bonus/make.c \
-		bonus/get_next_line.c bonus/get_next_line_utils.c
+		bonus/ft_newlst.c bonus/add.c  bonus/double_instraction.c bonus/make.c \
+		bonus/get_next_line.c bonus/get_next_line_utils.c bonus/ft_check_sort.c 
 
 FLAGS = -Wall -Werror -Wextra
 

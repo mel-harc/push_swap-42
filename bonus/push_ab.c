@@ -6,7 +6,7 @@
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:05:22 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/13 21:31:57 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/15 22:07:35 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,6 @@ void	pb(t_iinfo *info, t_sstack *stack_b)
 	}
 	else
 		ft_eelse(head, info, stack_b);
-	update_index(info);
-	update_index_b(stack_b);
-	write(1, "pb\n", 3);
 }
 
 void	ft_eelse(t_llist *head, t_iinfo *info, t_sstack *stack_b)
@@ -64,7 +61,4 @@ void	pa(t_iinfo *info, t_sstack *stack)
 		stack->top_b = NULL;
 		stack->prev_bottom_b = NULL;
 	}
-	update_index(info);
-	update_index_b(stack);
-	write(1, "pa\n", 3);
 }

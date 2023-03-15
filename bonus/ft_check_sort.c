@@ -1,33 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add.c                                           :+:      :+:    :+:   */
+/*   ft_check_sort.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 21:23:26 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/13 21:23:52 by mel-harc         ###   ########.fr       */
+/*   Created: 2023/03/15 19:32:39 by mel-harc          #+#    #+#             */
+/*   Updated: 2023/03/15 22:02:38 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	ft_add(t_iinfo *info, t_llist *new)
+void	check_sort(t_iinfo *info, t_sstack *stack)
 {
-	t_llist	*last;
+	t_llist	*head;
 
-	last = info->bottom;
-	if (info->top == NULL)
+	head = info->top;
+	while (head && head->next)
 	{
-		info->top = new;
-		new->prev_lst = NULL;
-		info->bottom = new;
+		if (head->value < head->next->value)
+			head = head->next;
+		else
+		{
+			valid_sort(1);
+			return ;
+		}
 	}
-	else
+	if (stack->top_b)
 	{
-		info -> prev_bottom = last;
-		new->prev_lst = last;
-		last->next = new;
-		info->bottom = new;
+		valid_sort(1);
+		return ;
 	}
+	valid_sort(0);
+}
+
+void	valid_sort(int n)
+{
+	if (n == 1)
+		write(1, "ko\n", 3);
+	else if (n == 0)
+		write(1, "ok\n", 3);
 }

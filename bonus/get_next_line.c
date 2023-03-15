@@ -6,7 +6,7 @@
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 21:10:05 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/13 23:04:42 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/15 18:23:12 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static char	*ft_read(int fd, char *str)
 	if (!buff)
 		return (NULL);
 	nb = 1;
-	while (nb && !ft_strchr(str, '\n'))
+	while (nb && !ft_sstrchr(str, '\n'))
 	{
 		nb = read(fd, buff, BUFFER_SIZE);
 		if (nb <= 0 && !*str)
@@ -38,7 +38,7 @@ static char	*ft_read(int fd, char *str)
 		else if (nb == -1 && *str != '\0')
 			return (ft_free(str, buff));
 		buff[nb] = '\0';
-		str = ft_strjoin(str, buff);
+		str = ft_sstrjoin(str, buff);
 		if (!str)
 			return (str = ft_free(str, buff));
 	}
@@ -50,7 +50,7 @@ static char	*ft_get_line(char *str)
 	int		i;
 	char	*line;
 
-	if (ft_strchr(str, '\n'))
+	if (ft_sstrchr(str, '\n'))
 	{
 		i = 0;
 		while (str[i] && str[i] != '\n')
@@ -61,7 +61,7 @@ static char	*ft_get_line(char *str)
 		ft_strlcpy(line, str, (i + 2));
 	}
 	else
-		line = ft_strdup(str);
+		line = ft_sstrdup(str);
 	return (line);
 }
 
@@ -71,12 +71,12 @@ static char	*ft_update_data(char *str)
 	int		i;
 	int		size;
 
-	if (ft_strchr(str, '\n'))
+	if (ft_sstrchr(str, '\n'))
 	{
 		i = 0;
 		while (str[i] && str[i] != '\n')
 			i++;
-		size = ft_strlen(str) - (i + 1);
+		size = ft_sstrlen(str) - (i + 1);
 		new_data = malloc((size + 1) * sizeof(char));
 		if (!new_data)
 			return (NULL);
@@ -96,7 +96,7 @@ char	*get_next_line(int fd)
 	if (fd < 0)
 		return (NULL);
 	if (!str)
-		str = ft_strdup("");
+		str = ft_sstrdup("");
 	if (!str)
 		return (NULL);
 	str = ft_read(fd, str);

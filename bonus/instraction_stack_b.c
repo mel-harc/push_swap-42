@@ -6,7 +6,7 @@
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:02:04 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/13 21:32:42 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/15 22:06:20 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@ void	sb(t_sstack *stack)
 {
 	int	tmp;
 
+	if (!stack->top_b || !stack->top_b->next)
+		return ;
 	tmp = stack->top_b->value;
 	stack->top_b->value = stack->top_b->next->value;
 	stack->top_b->next->value = tmp;
-	write(1, "sb\n", 3);
 }
 
 void	rb(t_sstack *stack)
@@ -29,7 +30,7 @@ void	rb(t_sstack *stack)
 
 	head = stack->top_b;
 	tail = stack->bottom_b;
-	if (!head->next)
+	if (!head || !head->next)
 		return ;
 	stack->bottom_b = head;
 	stack->prev_bottom_b = tail;
@@ -38,8 +39,6 @@ void	rb(t_sstack *stack)
 	stack->top_b = head->next;
 	stack->top_b->prev_lst = NULL;
 	head->next = NULL;
-	update_index_b(stack);
-	write(1, "rb\n", 3);
 }
 
 void	rrb(t_sstack *stack)
@@ -49,7 +48,7 @@ void	rrb(t_sstack *stack)
 
 	head = stack->top_b;
 	tail = stack->bottom_b;
-	if (!head->next)
+	if (!head || !head->next)
 		return ;
 	stack->top_b = tail;
 	stack->top_b->next = head;
@@ -58,6 +57,4 @@ void	rrb(t_sstack *stack)
 	stack->prev_bottom_b = stack->bottom_b->prev_lst;
 	stack->bottom_b->next = NULL;
 	stack->top_b->prev_lst = NULL;
-	update_index_b(stack);
-	write(1, "rrb\n", 4);
 }

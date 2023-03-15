@@ -6,7 +6,7 @@
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 21:13:38 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/13 23:13:08 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/15 22:10:06 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,22 @@
 # include <fcntl.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
+#  define BUFFER_SIZE 100000
 # endif
 
 typedef struct s_llist
 {
 	int				value;
-	int				index;
-	int				rank;
 	struct s_llist	*next;
 	struct s_llist	*prev_lst;
 }	t_llist;
 
 typedef struct s_iinfo
 {
-	int		size_lst;
 	t_llist	*top;
 	t_llist	*bottom;
 	t_llist	*prev_bottom;
-} t_iinfo;
+}	t_iinfo;
 
 typedef struct s_sstack
 {
@@ -65,11 +62,11 @@ size_t	ft_strlen(const char *s);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *s1);
 void	ft_error_a(int n);
-void	ft_add(t_iinfo *info, t_llist *new);
-t_llist	*ft_lstnew(int content, int i);
+void	add(t_iinfo *info, t_llist *new);
+t_llist	*lstnew(int content);
 void	fill_stack(int *nbr, int size);
 void	free_stack(t_iinfo *info);
-void	inial(t_iinfo *info, int size);
+void	inial(t_iinfo *info, t_sstack *stack);
 void	pa(t_iinfo *info, t_sstack *stack);
 void	pb(t_iinfo *info, t_sstack *stack_b);
 void	sb(t_sstack *stack);
@@ -79,11 +76,18 @@ void	sa(t_iinfo *info);
 void	ra(t_iinfo *info);
 void	rra(t_iinfo *info);
 void	ft_eelse(t_llist *head, t_iinfo *info, t_sstack *stack_b);
-void	update_index(t_iinfo *info);
-void	update_index_b(t_sstack *stack);
 char	*get_next_line(int fd);
 int		ft_strcmp(const char *s1, const char *s2);
-void	ft_make(char *str);
+void	ft_make(char *str, t_iinfo *info, t_sstack *stack);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t	ft_sstrlen(const char *s);
+char	*ft_sstrjoin(const char *s1, const char *s2);
+char	*ft_sstrchr(const char *s, int c);
+char	*ft_sstrdup(const char *s1);
+void	check_sort(t_iinfo *info, t_sstack *stack);
+void	valid_sort(int n);
+void	ss(t_iinfo *info, t_sstack *stack);
+void	rr(t_iinfo *info, t_sstack *stack);
+void	rrr(t_iinfo *info, t_sstack *stack);
 
 #endif

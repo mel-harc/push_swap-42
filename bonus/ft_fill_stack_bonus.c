@@ -6,7 +6,7 @@
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 17:48:36 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/13 22:11:50 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/15 22:09:43 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,30 @@
 
 void	fill_stack(int *nbr, int size)
 {
-	int		i;
-	t_llist	*tmp;
-	t_iinfo	info;
+	int			i;
+	char		*str;
+	t_llist		*tmp;
+	t_sstack	stack;
+	t_iinfo		info;
 
-	inial(&info, size);
 	i = 0;
+	inial(&info, &stack);
 	while (i < size)
 	{
-		tmp = ft_lstnew(nbr[i], i);
-		ft_add(&info, tmp);
+		tmp = lstnew(nbr[i]);
+		add(&info, tmp);
 		i++;
 	}
+	str = get_next_line(0);
+	while (str)
+	{
+		ft_make(str, &info, &stack);
+		free(str);
+		str = NULL;
+		str = get_next_line(0);
+	}
+	free(str);
+	check_sort(&info, &stack);
 	free_stack(&info);
 }
 
@@ -43,10 +55,12 @@ void	free_stack(t_iinfo *info)
 	}
 }
 
-void	inial(t_iinfo *info, int size)
+void	inial(t_iinfo *info, t_sstack *stack)
 {
 	info->bottom = NULL;
 	info->top = NULL;
 	info->prev_bottom = NULL;
-	info->size_lst = size;
+	stack->bottom_b = NULL;
+	stack->top_b = NULL;
+	stack->prev_bottom_b = NULL;
 }

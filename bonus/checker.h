@@ -6,7 +6,7 @@
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 21:13:38 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/15 22:10:06 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/16 13:43:45 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ char	*ft_strchr(const char *s, int c);
 int		check_dup_b(char **av);
 char	*fill_b(char **av);
 void	free_b(char **str, int *nbr, char *str_j);
-int		check_ordre_b(int *nbr, int size);
 void	error_b(int n);
 int		ft_atoi(const char *str);
 char	**ft_split(const char *s, char c);

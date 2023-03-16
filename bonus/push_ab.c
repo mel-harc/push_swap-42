@@ -6,7 +6,7 @@
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:05:22 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/15 22:07:35 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/16 14:37:45 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	pb(t_iinfo *info, t_sstack *stack_b)
 	t_llist	*head;
 
 	head = info->top;
-	if (!info->top)
+	if (!head)
 		return ;
 	if (!stack_b->top_b)
 	{

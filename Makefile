@@ -6,7 +6,7 @@
 #    By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/11 15:38:08 by mel-harc          #+#    #+#              #
-#    Updated: 2023/03/15 22:14:02 by mel-harc         ###   ########.fr        #
+#    Updated: 2023/03/16 14:53:13 by mel-harc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,20 +44,20 @@ OBJ_B = $(SRC_B:.c=.o)
 all : $(NAME)
 
 %.o : %.c $(HEADER) $(HEADER_B)
-		@$(CC) $(FLAGS) -c $< -o $@
+		$(CC) $(FLAGS) -c $< -o $@
 		
 $(NAME) : $(OBJ) $(HEADER)
-		@$(CC) $(OBJ) -o $(NAME)
+		$(CC) $(OBJ) -o $(NAME)
 
 bonus : $(OBJ_B) $(HEADER_B)
-		@$(CC) $(OBJ_B) -o $(NAME_B)
+		$(CC) $(OBJ_B) -o $(NAME_B)
 
 clean : 
-	@$(RM) $(OBJ) $(OBJ_B)
+	$(RM) $(OBJ) $(OBJ_B)
 
 fclean : clean
-		@$(RM) $(NAME) $(NAME_B)
+		$(RM) $(NAME) $(NAME_B)
 
-re : fclean all 
+re : fclean all bonus
 
 .PHONY: all clean fclean re

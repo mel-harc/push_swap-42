@@ -6,7 +6,7 @@
 /*   By: mel-harc <mel-harc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 16:19:44 by mel-harc          #+#    #+#             */
-/*   Updated: 2023/03/16 00:37:59 by mel-harc         ###   ########.fr       */
+/*   Updated: 2023/03/16 13:43:05 by mel-harc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ int	check_dup_b(char **av)
 			return (1);
 		i++;
 	}
-	// if (check_ordre_b(numbers, size) == 1)
-	// 	error_b(2);
 	fill_stack(numbers, size);
 	free_b(str_2d, numbers, str_j);
 	return (0);
@@ -73,21 +71,6 @@ void	free_b(char **str, int *nbr, char *str_j)
 	free(nbr);
 	free(str_j);
 	return ;
-}
-
-int	check_ordre_b(int *nbr, int size)
-{
-	int	i;
-
-	i = 0;
-	while (i < size && i + 1 < size)
-	{
-		if (nbr[i] < nbr[i + 1])
-			i++;
-		else
-			return (0);
-	}
-	return (1);
 }
 
 void	error_b(int n)

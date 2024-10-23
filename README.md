@@ -32,7 +32,7 @@ Sorting values is simple, but sorting them as fast as possible is less so. The m
 ## Project Requirements
 
 - The project **must be written in C**.
-- It **must comply** with the [42 Norm](https://www.42.fr/norm/) (a coding style guideline).
+- **Comply** with the [42 Norm](https://www.42.fr/norm/) (a coding style guideline).
 - The project **must not crash** unexpectedly (segmentation faults, bus errors, etc.).
 - All heap-allocated memory must be **freed** correctly (no memory leaks allowed).
 - **Makefile** submitted that compiles the project.

@@ -34,7 +34,7 @@ Sorting values is simple, but sorting them as fast as possible is less so. The m
 - The project **must be written in C**.
 - **Comply** with the [42 Norm](https://www.42.fr/norm/) (a coding style guideline).
 - The project **must not crash** unexpectedly (segmentation faults, bus errors, etc.).
-- All heap-allocated memory must be **freed** correctly (no memory leaks allowed).
+- All heap-allocated memory **freed** correctly (no memory leaks allowed).
 - **Makefile** submitted that compiles the project.
   - Flags: `-Wall`, `-Wextra`, `-Werror`
   - Rules: `$(NAME)`, `all`, `clean`, `fclean`, `re`

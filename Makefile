@@ -14,7 +14,7 @@ SRC =  mandator/push_swap.c mandator/ft_check.c libft/ft_split.c libft/ft_strchr
 		libft/ft_atoi.c libft/ft_isdigit.c libft/ft_strjoin.c libft/ft_strdup.c libft/ft_substr.c \
 		mandator/ft_stack.c libft/ft_lstnew.c libft/ft_lstaddback.c libft/ft_lstiter.c \
 		mandator/ft_swap.c libft/ft_lstmin.c libft/ft_lstmax.c libft/ft_lstiter1.c mandator/ft_push.c \
-		libft/ft_update_index.c mandator/ft_swap_b.c mandator/ft_rank.c mandator/ft_bogo_sort.c  mandator/ft_check_dup.c
+		libft/ft_update_index.c mandator/ft_swap_b.c mandator/ft_rank.c mandator/ft_sorting.c  mandator/ft_check_dup.c
 
 SRC_B = bonus/checker.c bonus/ft_check_dup_bonus.c bonus/ft_check_sign_bonus.c bonus/ft_fill_stack_bonus.c \
 		bonus/push_ab.c bonus/instraction_stack_a.c bonus/instraction_stack_b.c \

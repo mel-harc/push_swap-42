@@ -37,8 +37,8 @@ void	check_sort(t_iinfo *info, t_sstack *stack)
 
 void	valid_sort(int n)
 {
-	if (n == 1)
-		write(1, "ko\n", 3);
+	if (n != 0)
+		write(1, "KO\n", 3);
 	else if (n == 0)
-		write(1, "ok\n", 3);
+		write(1, "OK\n", 3);
 }

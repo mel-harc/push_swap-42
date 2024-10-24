@@ -1,4 +1,4 @@
-# Push_swap Project
+# 🔄 Push_swap Project
 
 This project will make you sort data on a stack, with a limited set of instructions, using the lowest possible number of actions. To succeed, you’ll have to manipulate various types of algorithms and choose the most appropriate solution (out of many) for optimized data sorting.
 
@@ -61,6 +61,12 @@ If there is an error:
   - Duplicates
 
 ### Example Usage
+
+ First compile the mandatory part.
+
+ ```bash
+$> make
+```
 
 ```bash
 $> ./push_swap 2 1 3 6 5 8
@@ -237,6 +243,12 @@ Write a program named `checker` that takes stack **a** as an argument and checks
 ---
 
 ### Example Usage:
+
+Compile bonus part.
+
+```bash
+$> make bonus
+```
 
 ```bash
 $> ./checker 3 2 1 0
